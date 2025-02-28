@@ -1,2 +1,1 @@
-# capbet
-🧢 CapBet 🧢
+# 🧢 CapBet 🧢
