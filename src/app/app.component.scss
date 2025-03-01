@@ -1,0 +1,50 @@
+.app {
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  &__logo {
+    font-size: 20px;
+    font-weight: 700;
+  }
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 15px;
+
+  transition: 0.3s;
+
+  cursor: pointer;
+  gap: 10px;
+
+  &:hover {
+    transform: translateX(5px);
+  }
+
+  &__img-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+
+    border-radius: 5px;
+
+    background-color: #000;
+  }
+
+  &__img {
+    width: 40px;
+    height: 40px;
+  }
+
+  &__title {
+    font-size: 15px;
+    font-weight: 600;
+  }
+}

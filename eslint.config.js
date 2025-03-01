@@ -48,7 +48,6 @@ module.exports = tseslint.config(
       '@angular-eslint/template/eqeqeq': 'error',
       '@angular-eslint/template/no-negated-async': 'error',
       '@angular-eslint/template/prefer-control-flow': 'error',
-      '@angular-eslint/template/prefer-ngsrc': 'error',
       '@angular-eslint/template/attributes-order': 'off', // controlled by prettier
       '@angular-eslint/template/prefer-self-closing-tags': 'error',
     },

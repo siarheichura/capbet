@@ -1,1 +1,33 @@
-🧢🧢🧢🧢🧢
+<nb-layout>
+  <nb-layout-header fixed>
+    <div class="app__header">
+      <span class="app__logo">🧢 CapBet</span>
+
+      <nb-user
+        class="app__user"
+        name="Seriy Volk"
+        size="medium"
+      />
+    </div>
+  </nb-layout-header>
+
+  <nb-layout-column>
+    @for (league of LEAGUES; track league.idLeague) {
+      <nb-card>
+        <div class="card">
+          <div class="card__img-wrap">
+            <img
+              class="card__img"
+              alt="logo"
+              [src]="league.strLeagueBadge"
+            />
+          </div>
+
+          <span class="card__title">{{ league.strLeague }}</span>
+        </div>
+      </nb-card>
+    }
+  </nb-layout-column>
+
+  <nb-layout-footer>footer</nb-layout-footer>
+</nb-layout>
