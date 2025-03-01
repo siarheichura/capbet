@@ -9,7 +9,8 @@
     "test": "ng test",
     "lint": "ng lint; stylelint \"**/*.{css,scss}\"",
     "lint:fix": "ng lint --fix; stylelint --fix \"**/*.{css,scss}\"",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "prepare": "husky"
   },
   "private": true,
   "dependencies": {
@@ -33,12 +34,14 @@
     "angular-eslint": "19.1.0",
     "eslint": "9.20.0",
     "eslint-plugin-import": "2.31.0",
+    "husky": "9.1.7",
     "jasmine-core": "5.4.0",
     "karma": "6.4.0",
     "karma-chrome-launcher": "3.2.0",
     "karma-coverage": "2.2.0",
     "karma-jasmine": "5.1.0",
     "karma-jasmine-html-reporter": "2.1.0",
+    "lint-staged": "15.4.3",
     "postcss-scss": "4.0.9",
     "prettier": "3.5.2",
     "prettier-plugin-organize-attributes": "1.0.0",
@@ -48,5 +51,15 @@
     "stylelint-scss": "6.11.1",
     "typescript": "5.6.2",
     "typescript-eslint": "8.23.0"
+  },
+  "lint-staged": {
+    "*.{ts,js,html,json,yml,md}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{css,scss}": [
+      "stylelint --fix",
+      "prettier --write"
+    ]
   }
 }
