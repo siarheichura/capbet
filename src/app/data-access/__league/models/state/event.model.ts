@@ -1,7 +1,7 @@
-import { EventStatusEnum } from '../../enums/event-status.enum';
-import { LeagueIdEnum } from '../../enums/league-id.enum';
+import { EventStatusEnum } from '../../../enums/event-status.enum';
+import { LeagueIdEnum } from '../../../enums/league-id.enum';
 
-export interface EventRestModel {
+export interface EventModel {
   idEvent: string;
   idAPIfootball: string;
   strEvent: string; // 'Real Madrid vs Atletico Madrid'

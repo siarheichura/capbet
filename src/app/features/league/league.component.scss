@@ -1,0 +1,13 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.league {
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
