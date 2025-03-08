@@ -1,1 +1,29 @@
-<p>league works!</p>
+<div class="league__header">
+  <button
+    nbButton
+    (click)="handlePrevRoundButtonClick()"
+  >
+    <nb-icon icon="chevron-left-outline" />
+  </button>
+
+  <input
+    nbInput
+    placeholder="Form control"
+    size="tiny"
+    type="number"
+    [formControl]="roundControl"
+  />
+
+  <button
+    nbButton
+    (click)="handleNextRoundButtonClick()"
+  >
+    <nb-icon icon="chevron-right-outline" />
+  </button>
+</div>
+
+<div class="league__body">
+  @for (event of events(); track event.idEvent) {
+    <cap-event [event]="event" />
+  }
+</div>

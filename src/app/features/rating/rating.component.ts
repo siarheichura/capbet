@@ -1,10 +1,10 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
-  selector: 'app-main',
+  selector: 'cap-players-rating',
   imports: [],
-  templateUrl: './main.component.html',
-  styleUrl: './main.component.scss',
+  templateUrl: './rating.component.html',
+  styleUrl: './rating.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class MainComponent {}
+export class RatingComponent {}

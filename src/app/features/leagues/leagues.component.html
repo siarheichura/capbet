@@ -1,0 +1,17 @@
+@for (league of LEAGUES; track league.idLeague) {
+  <nb-card [routerLink]="['/' + RoutesEnum.League, league.idLeague]">
+    <div class="card">
+      <div class="card__img-wrap">
+        <img
+          class="card__img"
+          alt="logo"
+          height="30"
+          width="30"
+          [ngSrc]="league.strLeagueBadge"
+        />
+      </div>
+
+      <span class="card__title">{{ league.strLeague }}</span>
+    </div>
+  </nb-card>
+}

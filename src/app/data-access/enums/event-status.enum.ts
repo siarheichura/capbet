@@ -1,6 +1,6 @@
 export enum EventStatusEnum {
   TimeToBeDefined = 'Time To Be Defined',
-  NotStarted = 'NotStarted',
+  NotStarted = 'Not Started',
   FirstHalfKickOff = 'First Half, Kick Off',
   Halftime = 'Halftime',
   SecondHalf2ndHalfStarted = 'Second Half, 2nd Half Started',

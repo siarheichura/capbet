@@ -1,0 +1,65 @@
+<nb-card>
+  <div class="event">
+    <div class="event__date">{{ event().dateEvent | date: "dd.MM.yyyy" }}</div>
+
+    <div class="event__teams">
+      <div class="event__team event__team--home">
+        <img
+          alt="logo"
+          height="30"
+          width="30"
+          [ngSrc]="event().strHomeTeamBadge"
+        />
+
+        <span class="event__team-name">{{ event().strHomeTeam }}</span>
+      </div>
+
+      <span class="event__score">{{ event().intHomeScore }} - {{ event().intAwayScore }}</span>
+
+      <div class="event__team event__team--away">
+        <span class="event__team-name">{{ event().strAwayTeam }}</span>
+
+        <img
+          alt="logo"
+          height="30"
+          width="30"
+          [ngSrc]="event().strAwayTeamBadge"
+        />
+      </div>
+    </div>
+
+    <nb-actions size="small">
+      @if (event().strVideo) {
+        <nb-action
+          icon="video-outline"
+          (click)="handleVideoActionClick(event().strVideo)"
+        />
+      }
+
+      @if (event().strStatus === EventStatusEnum.NotStarted) {
+        <nb-action
+          icon="flash-outline"
+          (click)="handleBetActionClick()"
+        />
+      }
+    </nb-actions>
+  </div>
+
+  @if (isBetPanelOpened()) {
+    <nb-card-footer class="event__footer">
+      <div class="event__bet-inputs">
+        <input
+          nbInput
+          type="text"
+        />
+
+        <span> - </span>
+
+        <input
+          nbInput
+          type="text"
+        />
+      </div>
+    </nb-card-footer>
+  }
+</nb-card>

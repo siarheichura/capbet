@@ -1,0 +1,69 @@
+.event {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+
+  padding: 10px;
+
+  &__teams {
+    display: grid;
+    grid-template-columns: 1fr 90px 1fr;
+    justify-items: center;
+
+    width: 100%;
+    gap: 10px;
+  }
+
+  &__date {
+    font-size: 11px;
+    font-weight: 600;
+  }
+
+  &__score {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 90px;
+
+    font-size: 25px;
+    font-weight: 600;
+  }
+
+  &__team {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+  }
+
+  &__team--home {
+    justify-self: end;
+  }
+
+  &__team--away {
+    justify-self: start;
+  }
+
+  &__team-name {
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__bet-inputs {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    input {
+      width: 50px;
+    }
+  }
+}
