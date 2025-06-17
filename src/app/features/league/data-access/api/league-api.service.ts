@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
-import { EventRestModel } from './models/rest/event.rest-model';
-import { RoundEventsRestModel } from './models/rest/round-events.rest-model';
+import { EventRestModel } from '~features/league/data-access/api/models/event';
+import { RoundEventsRestModel } from '~features/league/data-access/api/models/round-events';
 
 export interface RoundEventsParams {
   leagueId: string;
@@ -15,6 +15,12 @@ export class LeagueApiService {
   readonly #API_URL = 'https://www.thesportsdb.com/';
 
   #http = inject(HttpClient);
+
+  // Next and past event for Premier League (4328)
+  // [free limit is 1]
+  //
+  // 'https://www.thesportsdb.com/api/v1/json/123/eventsnextleague.php?id=4328'
+  // 'https://www.thesportsdb.com/api/v1/json/123/eventspastleague.php?id=4328'
 
   getRoundEvents(params: RoundEventsParams): Observable<EventRestModel[]> {
     return this.#http

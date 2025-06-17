@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, inject, OnInit } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import {
   NbActionsModule,
@@ -8,7 +8,8 @@ import {
   NbUserModule,
 } from '@nebular/theme';
 import { BetsStore } from './data-access/__bets/bets.store';
-import { LeagueStore } from './data-access/__league/league.store';
+import { UserApiService } from './data-access/__user/api/user-api.service';
+import { LeagueStore } from '~features/league/data-access/store/league';
 
 @Component({
   selector: 'cap-root',
@@ -26,8 +27,16 @@ import { LeagueStore } from './data-access/__league/league.store';
   ],
   providers: [BetsStore, LeagueStore],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   #leagueStore = inject(LeagueStore);
+  #userApiService = inject(UserApiService);
+
+  ngOnInit() {
+    this.#userApiService.user$.subscribe((user) => {
+      // eslint-disable-next-line no-console
+      console.log('user', user);
+    });
+  }
 
   isLoading = computed(() => this.#leagueStore.isLoading());
 }

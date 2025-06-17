@@ -1,5 +1,5 @@
-import { EventStatusEnum } from '../../../enums/event-status.enum';
-import { LeagueIdEnum } from '../../../enums/league-id.enum';
+import { EventStatusEnum } from '~features/league/data-access/enums/event-status';
+import { LeagueIdEnum } from '~features/leagues/data-access/enums/league-id';
 
 export interface EventModel {
   idEvent: string;

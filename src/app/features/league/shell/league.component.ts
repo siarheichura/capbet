@@ -10,8 +10,8 @@ import {
   NbInputModule,
 } from '@nebular/theme';
 import { debounceTime } from 'rxjs';
-import { LeagueStore } from '../../data-access/__league/league.store';
-import { EventComponent } from './components/event/event.component';
+import { LeagueStore } from '~features/league/data-access/store/league';
+import { EventComponent } from '~features/league/ui/event/event.component';
 
 @Component({
   selector: 'cap-league',

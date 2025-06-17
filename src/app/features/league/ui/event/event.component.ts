@@ -1,8 +1,8 @@
 import { DatePipe, NgOptimizedImage } from '@angular/common';
 import { ChangeDetectionStrategy, Component, input, signal } from '@angular/core';
 import { NbActionsModule, NbCardModule, NbInputModule } from '@nebular/theme';
-import { EventModel } from '../../../../data-access/__league/models/state/event.model';
-import { EventStatusEnum } from '../../../../data-access/enums/event-status.enum';
+import { EventStatusEnum } from '~features/league/data-access/enums/event-status';
+import { EventModel } from '~features/league/data-access/models/event';
 
 @Component({
   selector: 'cap-event',

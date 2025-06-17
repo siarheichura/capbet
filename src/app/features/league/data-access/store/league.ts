@@ -4,8 +4,11 @@ import { tapResponse } from '@ngrx/operators';
 import { patchState, signalStore, withMethods, withState } from '@ngrx/signals';
 import { rxMethod } from '@ngrx/signals/rxjs-interop';
 import { pipe, switchMap, tap } from 'rxjs';
-import { LeagueApiService, RoundEventsParams } from './league-api.service';
-import { EventModel } from './models/state/event.model';
+import {
+  LeagueApiService,
+  RoundEventsParams,
+} from '~features/league/data-access/api/league-api.service';
+import { EventModel } from '~features/league/data-access/models/event';
 
 export interface LeagueState {
   events: EventModel[];

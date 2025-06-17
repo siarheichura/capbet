@@ -1,0 +1,35 @@
+<nb-card>
+  <nb-card-header>
+    <h5>Логин</h5>
+  </nb-card-header>
+
+  <nb-card-body
+    class="card__body"
+    [formGroup]="form"
+  >
+    <input
+      formControlName="email"
+      fullWidth
+      nbInput
+      placeholder="Email"
+    />
+
+    <input
+      formControlName="password"
+      fullWidth
+      nbInput
+      placeholder="Password"
+    />
+  </nb-card-body>
+
+  <nb-card-footer>
+    <button
+      fullWidth
+      nbButton
+      status="primary"
+      (click)="handleSubmit()"
+    >
+      Submit
+    </button>
+  </nb-card-footer>
+</nb-card>

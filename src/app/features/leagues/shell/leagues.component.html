@@ -1,4 +1,4 @@
-@for (league of LEAGUES; track league.idLeague) {
+@for (league of leagues(); track league.idLeague) {
   <nb-card [routerLink]="['/' + RoutesEnum.League, league.idLeague]">
     <div class="card">
       <div class="card__img-wrap">

@@ -1,9 +1,9 @@
 import { NgOptimizedImage } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { NbCardModule } from '@nebular/theme';
-import { RoutesEnum } from '../../app.routes';
-import { LEAGUES } from '../../data-access/utils/constants';
+import { RoutesEnum } from '../../../app.routes';
+import { LeaguesStore } from '../data-access/store/leagues';
 
 @Component({
   selector: 'cap-leagues',
@@ -13,6 +13,9 @@ import { LEAGUES } from '../../data-access/utils/constants';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LeaguesComponent {
-  readonly LEAGUES = LEAGUES;
-  protected readonly RoutesEnum = RoutesEnum;
+  readonly RoutesEnum = RoutesEnum;
+
+  #store = inject(LeaguesStore);
+
+  leagues = this.#store.leagues;
 }

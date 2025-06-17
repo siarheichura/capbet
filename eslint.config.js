@@ -2,6 +2,7 @@ const eslint = require('@eslint/js');
 const tseslint = require('typescript-eslint');
 const angular = require('angular-eslint');
 const importPlugin = require('eslint-plugin-import');
+const unusedImports = require('eslint-plugin-unused-imports');
 
 module.exports = tseslint.config(
   {
@@ -12,14 +13,15 @@ module.exports = tseslint.config(
       ...tseslint.configs.stylistic,
       ...angular.configs.tsRecommended,
     ],
+
     plugins: {
       import: importPlugin,
+      'unused-imports': unusedImports,
     },
-    processor: angular.processInlineTemplates,
-    rules: {
-      '@angular-eslint/use-component-view-encapsulation': 'error',
-      '@angular-eslint/prefer-on-push-component-change-detection': 'error',
 
+    processor: angular.processInlineTemplates,
+
+    rules: {
       'import/order': [
         'error',
         {
@@ -27,6 +29,9 @@ module.exports = tseslint.config(
           alphabetize: { order: 'asc', caseInsensitive: true },
         },
       ],
+      'unused-imports/no-unused-imports': 'error',
+      '@angular-eslint/use-component-view-encapsulation': 'error',
+      '@angular-eslint/prefer-on-push-component-change-detection': 'error',
       quotes: ['error', 'single', { avoidEscape: true }],
       'comma-dangle': ['error', 'always-multiline'],
       'no-multiple-empty-lines': 'error',
@@ -37,6 +42,7 @@ module.exports = tseslint.config(
       'eol-last': ['error', 'always'],
     },
   },
+
   {
     files: ['**/*.html'],
     extends: [...angular.configs.templateRecommended, ...angular.configs.templateAccessibility],
